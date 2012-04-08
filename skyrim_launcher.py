@@ -14,12 +14,12 @@ btn_refresh = Button(root, text='Refresh')
 btn_refresh.pack()
 saves_work = SkyrimSaves(config.saves_path, config.copy_token)
 
+indexes_to_names = {}
 
 def on_listbox_double_clicked(event):
 	listbox = event.widget
-	current_index = listbox.curselection()
-	char_name = listbox.get(current_index)
-	saves_work.make_char_last_saved(char_name)
+	ind = listbox.index(listbox.curselection())
+	saves_work.make_char_last_saved(indexes_to_names[ind])
 	os.system(config.skyrim_launcher_path)	# launch Skyrim
 
 
@@ -29,6 +29,7 @@ def refresh_list():
 	saves_work.refresh()
 	for char_name in saves_work.get_chars_names():
 		listbox.insert(END, char_name)
+		indexes_to_names[listbox.size()-1] = char_name
 	root.title('Done')
 
 
