@@ -1,0 +1,7 @@
+Skyrim doesn't allow you to select a character to load. There are just a hundreds of save-files, and that's disappointing.
+
+This tool provides you a list of your characters by scanning "Saves" directory.
+Select one with doubleclick - Skyrim will be started, and "Continue" menu item will load last save of selected char.
+Don't forget to edit config.py at first.
+
+Tool just makes a copy of selected char's last save-file, so Skyrim treats that copy as latest save - and "Continue" will load it.
