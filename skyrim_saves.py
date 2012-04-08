@@ -19,6 +19,12 @@ def get_char_name(save_file_path):
 
 
 class SkyrimSaves:
+	"""
+		Scan Skyrim "Saves" directory to get characters and their files.
+
+		Use "make_char_last_saved" method to make a copy of that char last savefile,
+		so "Continue" menu item in Skyrim will load selected character.
+	"""
 	def __init__(self, saves_path, copy_token='___COPIED_SAVEGAME_'):
 		self.saves_path = saves_path
 		self.copy_token = copy_token
